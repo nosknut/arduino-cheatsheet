@@ -166,6 +166,8 @@ void loop()
 
     pinMode(buttonPin, INPUT);
     pinMode(motorPin, OUTPUT);
+    pinMode(thermometerPin, INPUT);
+    pinMode(electricalHeaterPin, OUTPUT);
 
     bool buttonIsPressed = digitalRead(buttonPin); // Returns 0 or 1
     digitalWrite(motorPin, HIGH);                  // Sets the motorPin to HIGH
