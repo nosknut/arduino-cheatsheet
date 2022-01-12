@@ -5,7 +5,6 @@ void loop()
     // Sizes:
     // https://robotresearchlab.com/2016/11/14/variable-data-types/
     int smallNumber = 0;
-    uint largeNumber = 0;
     long largeNumber = 0;
     double veryLargeNumber = 0.0;
     float decimalNumber = 0.0;
