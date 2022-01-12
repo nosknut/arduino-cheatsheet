@@ -1,5 +1,18 @@
 void loop()
 {
+    // Data types:
+    // https://www.javatpoint.com/arduino-data-types
+    // Sizes:
+    // https://robotresearchlab.com/2016/11/14/variable-data-types/
+    int smallNumber = 0;
+    uint largeNumber = 0;
+    long largeNumber = 0;
+    double veryLargeNumber = 0.0;
+    float decimalNumber = 0.0;
+    bool booleanValue = false;
+    char character = 'a';
+    string text = "Hello World";
+
     // Creating a boolean variable
     bool buttonPressed = true;
     // Inverting a boolean value with !
