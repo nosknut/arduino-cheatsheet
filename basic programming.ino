@@ -145,4 +145,26 @@ void loop()
     }
     waitForStartCommand();
     // Run code after start command is received
+
+    // IO functions:
+    int buttonPin = 1;
+    int motorPin = 2;
+    int thermometerPin = 3;
+    int electricalHeaterPin = 4;
+
+    pinMode(buttonPin, INPUT);
+    pinMode(motorPin, OUTPUT);
+
+    bool buttonIsPressed = digitalRead(buttonPin); // Returns 0 or 1
+    digitalWrite(motorPin, HIGH);                  // Sets the motorPin to HIGH
+
+    int temperature = analogRead(thermometerPin); // Returns a value between 0 and 1023
+    analogWrite(electricalHeaterPin, 255);        // Sets the electricalHeaterPin to 255 (0%=0, 100%=255)
+
+    // Serial monitor
+    Serial.begin(9600);
+    Serial.print("The temperature is: ");
+    temperature = 1023;
+    Serial.println(temperature);
+    // Prints:  "The temperature is: 1023"
 }
