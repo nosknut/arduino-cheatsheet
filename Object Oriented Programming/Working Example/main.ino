@@ -1,5 +1,5 @@
-// Import the code from the file: "Motor.ino"
-#include "Motor.ino"
+// The "Motor.ino" file is automatically included. In arduino projects,
+// all .ino files in the folder are automatically imported.
 
 // Read the "Motor.ino" file to see what the functions in motor1 and motor2 does.
 /*
