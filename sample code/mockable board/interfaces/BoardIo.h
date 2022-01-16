@@ -1,3 +1,6 @@
+#ifndef BoardIo_h
+#define BoardIo_h
+
 #include "SerialController.h"
 
 class BoardIo
@@ -5,17 +8,16 @@ class BoardIo
 public:
     SerialController serial;
 
-    virtual int analogRead(int pin);
-    virtual void analogWrite(int pin, int value);
-    virtual void pinMode(int pin, int mode);
-    virtual void digitalWrite(int pin, int value);
-    virtual int digitalRead(int pin);
-    virtual void delay(int ms);
-    virtual void delayMicroseconds(int us);
-    virtual long millis();
-    virtual long micros();
-
-    BoardIo(SerialController serialController) : serial(serialController)
-    {
-    }
+    int analogRead(int pin);
+    void analogWrite(int pin, int value);
+    void pinMode(int pin, int mode);
+    void digitalWrite(int pin, int value);
+    int digitalRead(int pin);
+    void delay(int ms);
+    void delayMicroseconds(int us);
+    long millis();
+    long micros();
+    BoardIo(SerialController serialController);
 };
+
+#endif

@@ -1,3 +1,6 @@
+#ifndef SerialController_h
+#define SerialController_h
+
 class SerialController
 {
 public:
@@ -6,3 +9,5 @@ public:
     virtual void begin(int baudRate);
     virtual char *readString();
 };
+
+#endif
