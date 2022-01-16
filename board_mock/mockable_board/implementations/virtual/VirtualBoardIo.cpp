@@ -3,8 +3,8 @@
 #include <chrono>
 #include <thread>
 #include "VirtualBoardIo.h"
-#include "interfaces/BoardIo.h"
-#include "interfaces/SerialController.h"
+#include "../../interfaces/BoardIo.h"
+#include "../../interfaces/SerialController.h"
 
 VirtualBoardIo::VirtualBoardIo(SerialController serialController) : BoardIo(serialController)
 {

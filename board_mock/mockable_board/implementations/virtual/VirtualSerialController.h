@@ -3,7 +3,7 @@
 
 #include <iostream>
 #include <string>
-#include "interfaces/SerialController.h"
+#include "../../interfaces/SerialController.h"
 
 class VirtualSerialController : public SerialController
 {

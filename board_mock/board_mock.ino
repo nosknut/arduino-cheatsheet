@@ -1,14 +1,24 @@
 #pragma once
 
-#include "mockable_board/MockableBoard.h"
+#include "Arduino.h"
+#include "mockable_board/interfaces/BoardIo.h"
+#include "mockable_board/interfaces/SerialController.h"
 
-#define debug 1
+#ifndef debug
+#define debug 0
+#endif
 
-void main()
-{
-    setup();
-    loop();
-}
+#if (debug)
+#include "mockable_board/implementations/virtual/VirtualBoardIo.h"
+#include "mockable_board/implementations/virtual/VirtualSerialController.h"
+BoardIo board = VirtualBoardIo(VirtualSerialController());
+#else
+#include "mockable_board/implementations/physical/PhysicalBoardIo.h"
+#include "mockable_board/implementations/physical/PhysicalSerialController.h"
+BoardIo board = PhysicalBoardIo(PhysicalSerialController());
+#endif // if(debug)
+
+#define debug 0
 
 void setup()
 {

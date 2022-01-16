@@ -5,8 +5,8 @@
 #include <string>
 #include <chrono>
 #include <thread>
-#include "interfaces/BoardIo.h"
-#include "interfaces/SerialController.h"
+#include "../../interfaces/BoardIo.h"
+#include "../../interfaces/SerialController.h"
 
 class VirtualBoardIo : public BoardIo
 {

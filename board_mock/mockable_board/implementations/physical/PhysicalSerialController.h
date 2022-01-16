@@ -2,7 +2,7 @@
 #define PhysicalSerialController_h
 
 #include "Arduino.h"
-#include "interfaces/SerialController.h"
+#include "../../interfaces/SerialController.h"
 
 class PhysicalSerialController : public SerialController
 {

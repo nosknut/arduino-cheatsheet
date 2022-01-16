@@ -2,15 +2,13 @@
 #define PhysicalBoardIo_h
 
 #include "Arduino.h"
-#include "interfaces/BoardIo.h"
-#include "interfaces/SerialController.h"
+#include "../../interfaces/BoardIo.h"
+#include "../../interfaces/SerialController.h"
 
 class PhysicalBoardIo : public BoardIo
 {
 public:
-    PhysicalBoardIo(SerialController serialController) : BoardIo(serialController)
-    {
-    }
+    PhysicalBoardIo(SerialController serialController);
 
     int analogRead(int pin);
     void analogWrite(int pin, int value);
