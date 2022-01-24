@@ -10,7 +10,7 @@ void loop()
     float decimalNumber = 0.0;
     bool booleanValue = false;
     char character = 'a';
-    string text = "Hello World";
+    String text = "Hello World";
 
     // Creating a boolean variable
     bool buttonPressed = true;
@@ -95,7 +95,7 @@ void loop()
         // Will not run if condition or condition2 is true
     }
 
-    string commandFromTerminal = "start";
+    String commandFromTerminal = "start";
     switch (commandFromTerminal)
     {
     case "start":
@@ -154,7 +154,7 @@ void loop()
         {
             if (Serial.available() > 0)
             {
-                string command = Serial.readString();
+                String command = Serial.readString();
                 if (command == "start")
                 {
                     break;

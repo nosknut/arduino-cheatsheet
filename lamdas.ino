@@ -53,7 +53,7 @@ to the lambda.
 void outerFunction()
 {
     int temperature = 0;
-    string unit = '*C';
+    String unit = '*C';
 
     /*
      The & operator in the [] below means "pass by reference"
@@ -82,7 +82,7 @@ void outerFunction()
     We can also specify the capture-clause ([]) like this: [=unit, &]
     to capture unit by value and everything else by reference.
     */
-    auto printTemperature = [&](string message)
+    auto printTemperature = [&](String message)
     {
         Serial.print(message);
         Serial.print(temperature);

@@ -159,7 +159,7 @@ void loop()
         // delay(1000) pauses the program for 1000 milliseconds (1 second)
         delay(1000);
         /*
-        Serial.println() prints a string to the serial monitor
+        Serial.println() prints a String to the serial monitor
         The serial monitor is a window on your pc that you can use to
         see the messages you send with this function.
         Useful if you want to see what your program is doing.
