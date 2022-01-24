@@ -150,9 +150,16 @@ void loop()
     // Waiting for serial input
     void waitForStartCommand()
     {
-        while (Serial.readString() != "start")
+        while (true)
         {
-            // Do nothing
+            if (Serial.available() > 0)
+            {
+                string command = Serial.readString();
+                if (command == "start")
+                {
+                    break;
+                }
+            }
         }
     }
     waitForStartCommand();
