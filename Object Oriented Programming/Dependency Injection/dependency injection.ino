@@ -1,3 +1,6 @@
+#define USBCON
+#include <Arduino.h>
+
 /*
 Funfact:
 Did you know that if you take a wild guess on what something does in programming,
@@ -176,13 +179,12 @@ Pay attention to such pitfalls when writing your code.
 */
 
 WarningLamp warningLamp(9);
-
 Motor motor1(1, Thermometer(A0), warningLamp);
 Motor motor2(2, Thermometer(A1), warningLamp);
 Motor motor3(3, Thermometer(A2), warningLamp);
 Motor motor4(4, Thermometer(A3), warningLamp);
 
-Button button = Button(5);
+Button button(5);
 
 void setup()
 {

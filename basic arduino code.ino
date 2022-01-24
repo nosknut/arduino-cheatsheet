@@ -1,3 +1,6 @@
+#define USBCON
+#include <Arduino.h>
+
 // READ THE FIRST 10 lines of comments in this file. You won't regret it!
 // The following file contains most of the concepts you need to understand Arduino programming.
 

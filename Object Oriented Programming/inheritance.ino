@@ -1,3 +1,6 @@
+#define USBCON
+#include <Arduino.h>
+
 /*
 Almost every example with OOP so far has had a pin variable
 and a setup() function that only sets the pinMode.
@@ -7,12 +10,12 @@ a common place!
 
 /*
 We can use the builtins but it is more understandable for someone that uses this code
-to see PinMode instead of uint8_t (the dataType of INPUT and OUTPUT)
+to see the type "PinMode" instead of "uint8_t" (the dataType of INPUT and OUTPUT)
 */
 enum class PinMode
 {
-    INPUT,
-    OUTPUT
+    IN = INPUT,
+    OUT = OUTPUT
 };
 
 class PinDevice
@@ -36,16 +39,7 @@ public:
 
     void setup()
     {
-        switch (mode)
-        {
-        case PinMode::INPUT:
-            pinMode(pin, INPUT);
-            break;
-
-        case PinMode::OUTPUT:
-            pinMode(pin, OUTPUT);
-            break;
-        }
+        pinMode(pin, (int)mode);
     }
 };
 

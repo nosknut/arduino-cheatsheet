@@ -1,3 +1,6 @@
+#define USBCON
+#include <Arduino.h>
+
 // NB! Comments in this file refer to the code line directly below the comment.
 
 /*
@@ -92,6 +95,12 @@ public:
         In the line below we are accessing the "speed" variable for "this" instance of the class
         using the -> accessor. This is similar to writing this["speed"] = speed; in python,
         where "this" is a dictionary and "speed" is a key. 
+        the -> operator differs from the . operator, in that the -> operator is used to access
+        members of a pointer, and the . operator is used to access members of a class.
+        
+        Generally:
+        When the left side of the accessor is "this", use ->
+        When the left side of the accessor is not "this", use .        
         */
         this->speed = speed;
     }

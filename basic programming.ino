@@ -1,3 +1,6 @@
+#define USBCON
+#include <Arduino.h>
+
 void loop()
 {
     // Data types:
@@ -95,23 +98,38 @@ void loop()
         // Will not run if condition or condition2 is true
     }
 
-    String commandFromTerminal = "start";
-    switch (commandFromTerminal)
+    enum class TerminalCommand
     {
-    case "start":
-        /* code placed here will run in this example */
+        START = 'a',
+        STOP = 'b',
+        LEFT = 'c',
+        RIGHT = 'd',
+    };
+
+    char commandFromTerminal = 'a';
+
+    /*
+    By writing "(Type)variable" instead of just writing "variable" we are "casting" the variable to the type.
+    A "char" type is actually stored as an "int", and the TerminalCommand enum values ('a', 'b', c' etc...) are
+    cast to int when we create the enum. So the true value of TerminalCommand::START is actually 97,
+    which is the int representation of the char 'a'.
+    */
+    switch ((TerminalCommand)commandFromTerminal)
+    {
+    case TerminalCommand::START: // Start
+        /* code placed here will run for the current value of commandFromTerminal */
         break;
 
-    case "stop":
-        /* this code will only run if (commandFromTerminal == "stop") */
+    case TerminalCommand::STOP: // Stop
+        /* this code will only run if (commandFromTerminal == 'b') */
         break;
 
-    case "left":
-        /* this code will only run if (commandFromTerminal == "left") */
+    case TerminalCommand::LEFT: // Left
+        /* this code will only run if (commandFromTerminal == 'c') */
         break;
 
-    case "right":
-        /* this code will only run if (commandFromTerminal == "right") */
+    case TerminalCommand::RIGHT: // Right
+        /* this code will only run if (commandFromTerminal == 'd') */
         break;
 
     default:

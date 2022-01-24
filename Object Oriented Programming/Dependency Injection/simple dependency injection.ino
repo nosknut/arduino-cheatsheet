@@ -1,11 +1,16 @@
+#define USBCON
+#include <Arduino.h>
+
 class Thing
 {
 };
 
-class OtherTing
+class OtherThing
 {
+private:
     const Thing thing;
 
+public:
     OtherThing(Thing thing) : thing(thing)
     {
     }
@@ -16,6 +21,19 @@ class OtherTing
     }
 };
 
-OtherThing otherThing(Thing());
+/*
+Because we instansiate Thing() directly in the parameter list of OtherThing,
+we must explicitly call the constructor of OtherThing() by writing
+    
+    Type variableName = Type(parameterList);
 
-Thing thing = otherThing.getThing();
+instead of
+    
+    Type variableName(parameterList);
+*/
+OtherThing otherThing = OtherThing(Thing());
+
+void setup()
+{
+    Thing thing = otherThing.getThing();
+}

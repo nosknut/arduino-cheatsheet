@@ -1,3 +1,7 @@
+#define USBCON
+#include <Arduino.h>
+#include "Motor.ino"
+
 // The "Motor.ino" file is automatically included. In arduino projects,
 // all .ino files in the folder are automatically imported.
 

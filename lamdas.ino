@@ -1,3 +1,6 @@
+#define USBCON
+#include <Arduino.h>
+
 /*
 Lambdas are anonymous functions.
 We somewhat have them in python, however they are far less useful.
@@ -53,7 +56,7 @@ to the lambda.
 void outerFunction()
 {
     int temperature = 0;
-    String unit = '*C';
+    String unit = "*C";
 
     /*
      The & operator in the [] below means "pass by reference"
@@ -67,7 +70,7 @@ void outerFunction()
      If we were to to the following inside the lambda:
     
         temperature = 10;
-        unit = '*F';
+        unit = "*F";
     
     Then the temperature variable would also change inside outerFunction(),
     but the unit variable would only change inside the lambda.
