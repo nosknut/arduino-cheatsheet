@@ -137,6 +137,29 @@ void loop()
         break;
     }
 
+    // For string commands
+    if (Serial.available())
+    {
+        String command = Serial.readString();
+        // The line below removes the "\n" newline character that
+        // the serial terminal automatically adds to the messages
+        command.trim();
+        // The line below will ensure that "oPEn", "Open", "open", "OPEN" etc will be valid commands
+        command.toLowerCase();
+        if (command == "open")
+        {
+            Serial.println("Opening");
+        }
+        else if (command == "close")
+        {
+            Serial.println("Closing");
+        }
+        else if (command == "selfdestruct")
+        {
+            Serial.println("Self Destructing");
+        }
+    }
+
     // For loops
     /*
     The following describes what each entry
